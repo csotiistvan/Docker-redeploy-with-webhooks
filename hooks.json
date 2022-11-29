@@ -1,0 +1,8 @@
+[
+  {
+    "id": "redeploy",
+    "execute-command": "/home/ubuntu/redeploy.sh",
+    "command-working-directory": "/home/ubuntu",
+    "response-message": "Redeploying server container."
+  }
+]
