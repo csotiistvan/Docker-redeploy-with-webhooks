@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 sudo docker pull ashcroftt/nginx-test-artwrks:main
 sudo docker stop SRV_CONTAINER
 sudo docker system prune -f
