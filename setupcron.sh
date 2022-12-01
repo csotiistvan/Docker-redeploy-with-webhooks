@@ -1,1 +1,1 @@
-(crontab -l ; echo "* /5 * * * sudo bash <PATH>/redeploy.sh ") | crontab -
+(crontab -l ; echo "*/5 * * * * sudo bash /home/ubuntu/redeploy.sh ") | crontab -
