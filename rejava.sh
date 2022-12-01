@@ -1,5 +1,10 @@
 #!/bin/bash
-sudo docker pull jutsz/schiele-jar:latest
-sudo docker stop JAR_CONTAINER
-sudo docker system prune -f
-sudo docker run -d --name=JAR_CONTAINER -p 80:80 jutsz/schiele-jar:latest
+message=$(sudo docker pull jutsz/jar:latest | egrep '^Status:')
+#echo $message
+if [[ $message != "Status: Image is up to date for jutsz/jar:latest" ]]
+then
+    sudo docker stop JARJAR
+    sudo docker system prune -f
+    sudo docker run -d --name=JARJAR -p 80:8080 -p 5432:5432 jutsz/jar:latest
+    sudo docker start JARJAR
+fi
