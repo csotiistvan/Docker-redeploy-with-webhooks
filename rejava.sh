@@ -7,4 +7,6 @@ then
     sudo docker system prune -f
     sudo docker run -d --name=JARJAR -p 80:8080 -p 5432:5432 jutsz/jar:latest
     sudo docker start JARJAR
+else
+    sudo docker start JARJAR
 fi
