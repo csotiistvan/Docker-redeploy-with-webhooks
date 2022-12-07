@@ -10,3 +10,8 @@ then
 else
     sudo docker start JARJAR
 fi
+webhookactive=$(sudo netstat -tulpn | awk '$7 ~ ".webhook" awk {print $6}')
+if [[ $webhookactive != "LISTEN" ]]
+then
+  sudo webhook -hooks /home/ubuntu/hooks.json -hotreload -nopanic &
+fi
