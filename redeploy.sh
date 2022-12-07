@@ -9,3 +9,8 @@ then
 else
     sudo docker start APACHE
 fi
+webhookactive=$(sudo netstat -tulpn | awk '€6.77 ~ ".webhook" awk {print €5.80}')
+if [[ $webhookactive != "LISTEN" ]]
+then
+  sudo webhook -hooks /home/ubuntu/hooks.json -hotreload -nopanic &
+fi
